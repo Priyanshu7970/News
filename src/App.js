@@ -1,25 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react'
+import Navbar from './components/Navbar' 
+import News from './components/News'  
+import LoadingBar from 'react-top-loading-bar'
+import { BrowserRouter as Router,Switch,Route } from 'react-router-dom/cjs/react-router-dom.min'
+ const App = ()=> {
+   const pageSize = 10
+  let [progress,setProgress] = useState(0) 
+   const apiKey = process.env.REACT_APP_NEWS_API ;
+ 
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+  let  UpdateProgress = (progress)=>{ 
+         setProgress(progress)
 
-export default App;
+  }
+
+    return ( <>  
+     <Router>
+      <Navbar/>   
+      <LoadingBar 
+      height={3}
+        color='#f11946'
+        progress={progress}
+      /> 
+      <Switch>
+       <Route exact path="/"> <News UpdateProgress={UpdateProgress} apiKey={apiKey} key="general" pagesize={pageSize} country="in" category="general"/></Route>
+       <Route exact path="/business"> <News UpdateProgress={UpdateProgress} apiKey={apiKey} key="business" pagesize={pageSize} country="in" category="business"/></Route>
+       <Route exact path="/entertainment"> <News UpdateProgress={UpdateProgress} apiKey={apiKey} key="entertainment" pagesize={pageSize} country="in" category="entertainment"/></Route>
+       <Route exact path="/health"> <News UpdateProgress={UpdateProgress} apiKey={apiKey} key="health" pagesize={pageSize} country="in" category="health"/></Route>
+       <Route exact path="/science"> <News UpdateProgress={UpdateProgress} apiKey={apiKey} key="science" pagesize={pageSize} country="in" category="science"/></Route>
+       <Route exact path="/sports"> <News UpdateProgress={UpdateProgress} apiKey={apiKey} key="sports" pagesize={pageSize} country="in" category="sports"/></Route>
+       <Route exact path="/technology "> <News UpdateProgress={UpdateProgress} apiKey={
+        apiKey} key="technology" pagesize={pageSize} country="in" category="technology"/></Route> 
+      </Switch> 
+        </Router>
+        </>
+    
+    )
+  }
+  
+export default App ;
+
+
