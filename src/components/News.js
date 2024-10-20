@@ -16,6 +16,7 @@ import InfiniteScroll from "react-infinite-scroll-component";
         UpdateProgress(10);
         let data = await fetch(`https://newsapi.org/v2/top-headlines?country=${country}&category=${category}&apiKey=${apiKey}&page=${page}&pageSize=${pagesize}`);
         setLoading(true);
+        console.log(data);
         let parsedData = await data.json();
         UpdateProgress(30);
         console.log(parsedData);
