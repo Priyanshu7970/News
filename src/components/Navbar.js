@@ -14,7 +14,7 @@ import { Link } from 'react-router-dom'
 
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
               <ul className="navbar-nav mr-auto">
-               <li className="nav-item"><Link className="nav-link" to="/business">Business</Link></li> 
+               <li className="nav-item "><Link className="nav-link" to="/business">Business</Link></li> 
                <li className="nav-item"><Link className="nav-link" to="/entertainment">Entertainment</Link></li> 
                <li className="nav-item"><Link className="nav-link" to="/">General</Link></li> 
                <li className="nav-item"><Link className="nav-link" to="/health">Health</Link></li> 

@@ -114,7 +114,7 @@ useEffect(() => {
 
 }   
  News.defaultProps = {
-  country:"in", 
+  country:"us", 
   pagesize:5
 
 }  

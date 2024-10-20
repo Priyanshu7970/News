@@ -25,7 +25,7 @@ import { BrowserRouter as Router,Switch,Route } from 'react-router-dom/cjs/react
       <Switch>
        <Route exact path="/"> <News UpdateProgress={UpdateProgress} apiKey={apiKey} key="general" pagesize={pageSize} country="us" category="general"/></Route>
        <Route exact path="/business"> <News UpdateProgress={UpdateProgress} apiKey={apiKey} key="business" pagesize={pageSize} country="us" category="business"/></Route>
-       <Route exact path="/entertainment"> <News UpdateProgress={UpdateProgress} apiKey={apiKey} key="entertainment" pagesize={pageSize} country="in" category="entertainment"/></Route>
+       <Route exact path="/entertainment"> <News UpdateProgress={UpdateProgress} apiKey={apiKey} key="entertainment" pagesize={pageSize} country="us" category="entertainment"/></Route>
        <Route exact path="/health"> <News UpdateProgress={UpdateProgress} apiKey={apiKey} key="health" pagesize={pageSize} country="us" category="health"/></Route>
        <Route exact path="/science"> <News UpdateProgress={UpdateProgress} apiKey={apiKey} key="science" pagesize={pageSize} country="us" category="science"/></Route>
        <Route exact path="/sports"> <News UpdateProgress={UpdateProgress} apiKey={apiKey} key="sports" pagesize={pageSize} country="us" category="sports"/></Route>
